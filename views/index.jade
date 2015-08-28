@@ -1,7 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  
-  .post 
-    h2 Title
+  .col-md-10.col-md-offset-1
+    .panel.panel-default(ng-repeat='post in posts')
+      .panel-body
+        img(src='{{post.img}}')
+        .content
+          h4 {{post.title}} | 
+            span.glyphicon.glyphicon-arrow-up(aria-hidden='true') 
+            span.glyphicon.glyphicon-arrow-down(aria-hidden='true')&nbsp;
+            | {{post.numVotes}}
+          .author 
+            p By: {{post.author}}
+          .description
+            p {{post.description}}
+            p {{post.dataPosted | date : format : timezone}} | Comments | Add Comments
+          
+          
+          
+          
+          
+          
+          
+          
+          
+//

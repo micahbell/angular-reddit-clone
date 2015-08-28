@@ -1,3 +1,17 @@
 .post {
   border: 1px solid;
 }
+
+.panel {
+  background-color: whitesmoke;
+}
+
+img {
+  max-width: 210px;
+  margin-right: 12px;
+  float: left;
+}
+
+.author {
+  text-align: right;
+}
