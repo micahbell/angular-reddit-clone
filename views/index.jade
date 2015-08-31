@@ -2,13 +2,31 @@ extends layout
 
 block content
   .col-md-10.col-md-offset-1
+    .add-form(ng-show='showForm')
+      .panel.panel-default
+        .panel-body
+          label(for='title') Title
+          input.form-control.add(type='text' id='title' name='title' placeholder='Title' ng-model='title')
+          
+          label(for='author') Author
+          input.form-control.add(type='text' id='author' name='author' placeholder='Author' ng-model='author')
+          
+          label(for='image') Image URL
+          input.form-control.add(type='text' id='image' name='image' placeholder='Image URL' ng-model='image')
+          
+          label(for='description') Description
+          input.form-control.add(type='text' id='description' name='description' placeholder='Description' ng-model='description')
+          
+          button#add-button(type='submit' ng-click='addPost(title, author, image, description)') Add New Post
+          span.invalid(ng-show='invalid') Please fill in all fields.
+      
     .panel.panel-default(ng-repeat='post in posts')
       .panel-body
-        img(src='{{post.img}}')
+        img(src='{{post.image}}')
         .content
           h4 {{post.title}} | 
-            span.glyphicon.glyphicon-arrow-up(aria-hidden='true') 
-            span.glyphicon.glyphicon-arrow-down(aria-hidden='true')&nbsp;
+            span.glyphicon.glyphicon-arrow-up(aria-hidden='true' ng-click='upvote(post)') 
+            span.glyphicon.glyphicon-arrow-down(aria-hidden='true' ng-click='downvote(post)')&nbsp;
             | {{post.numVotes}}
           .author 
             p By: {{post.author}}

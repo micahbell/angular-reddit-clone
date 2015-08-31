@@ -7,7 +7,7 @@
 }
 
 img {
-  max-width: 210px;
+  max-width: 215px;
   margin-right: 12px;
   float: left;
 }
@@ -15,3 +15,28 @@ img {
 .author {
   text-align: right;
 }
+
+input.form-control.add {
+  margin-bottom: 14px;
+}
+
+input.form-control#search {
+  margin-right: 4px;
+}
+
+#add-button{
+  margin-top: 14px;
+  margin-right: 14px;
+}
+
+span.invalid {
+  color: red;
+}
+
+
+
+
+
+
+
+/**/
