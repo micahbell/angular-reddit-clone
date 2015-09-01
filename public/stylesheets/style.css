@@ -37,7 +37,7 @@ span.invalid, .negative {
   color: green;
 }
 
-span.add {
+span.add, span.view {
   cursor: pointer;
 }
 
@@ -55,6 +55,11 @@ span.add {
 
 .form-inline button {
   margin-left: 15px;
+}
+
+.comment {
+  position: relative;
+  left: 230px;
 }
 
 

@@ -1,6 +1,9 @@
 var app = angular.module('redditClone', ['angularMoment']);
 
 app.controller('PostController', function($scope) {
+  $scope.showForm = false;
+  $scope.commentForm = false;
+  $scope.comments = false;
   $scope.upvote = function(post) {
     post.numVotes += 1;
   };
@@ -9,7 +12,6 @@ app.controller('PostController', function($scope) {
     post.numVotes -= 1;
   };
 
-  $scope.showForm = false;
   $scope.toggleForm = function() {
     $scope.showForm = !$scope.showForm;
   };
@@ -34,9 +36,12 @@ app.controller('PostController', function($scope) {
     };
   };
 
-  $scope.commentForm = false;
   $scope.toggleCommentForm = function() {
     $scope.commentForm = !$scope.commentForm;
+  };
+
+  $scope.toggleCommentView = function() {
+    $scope.comments = !$scope.comments;
   };
 
   $scope.addComment = function(post, commenter, comment) {
@@ -48,7 +53,7 @@ app.controller('PostController', function($scope) {
     // Why won't these reset!?
     $scope.commenter = '';
     $scope.comment = '';
-    $scope.comments = true;
+    //////////////////////////
   };
 
   $scope.posts = [
@@ -75,7 +80,7 @@ app.controller('PostController', function($scope) {
       author: 'Maeby Fünke',
       image: '../images/gob.jpg',
       description: "GENE!! So Ann, the question is, do you want a man or a boy? I know how I would answer. [Stabbing Gob] White power! Gob: I'm white! But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood? What do you think about Sudden Valley? It sounds like a salad dressing, but for some reason I don't want to eat it.",
-      numVotes: -3,
+      numVotes: 2,
       datePosted: "2015-08-27T09:27:47.650Z",
       comments: []
     },
@@ -84,8 +89,17 @@ app.controller('PostController', function($scope) {
       author: 'Barry Zuckerkorn',
       image: '../images/tobias.jpg',
       description: "Oh, yeah, the $4,000 suit is holding the elevator for a guy who doesn't make that in 3 months. Come on! I'm an ideas man, Michael. I think I proved that with 'Fuck Mountain.' Annhog's coming? No, no, it's pronounced a-nal-ra-pist. It wasn't really the pronunciation that bothered me. Buster's in what we like to call a light to no coma. In layman's terms, it might be considered a very heavy nap.",
-      numVotes: 2,
+      numVotes: -3,
       datePosted: "2015-01-31T19:27:47.650Z",
+      comments: []
+    },
+    {
+      title: 'The Bob Loblaw Law Blog',
+      author: 'Gene Parmesean',
+      image: '../images/buster.jpg',
+      description: "She keeps saying that God is going to show me a sign. The… something of my ways. Wisdom? It's probably wisdom. Everyone's laughing, and riding, and cornholing except Buster.  I'd rather be dead in California than alive in Arizona. A lady of the evening. Working girl. She turns illusions for money. We're just blowing through nap time, aren't we?",
+      numVotes: 3,
+      datePosted: "2015-08-26T03:39:47.650Z",
       comments: []
     }
   ];

@@ -32,11 +32,11 @@ block content
             p By: {{post.author}}
           .description
             p {{post.description}}
-            p {{post.datePosted | amCalendar}} | 
-              span {{post.comments.length}} 
-              <ng-pluralize count='post.comments.length' when="{'1': 'Comment', 'other': 'Comments'}">
-              </ng-pluralize> | 
-              span.add(ng-click='toggleCommentForm()') Add Comments
+            p {{post.datePosted | amCalendar}} &nbsp;|
+              span.view(ng-click='toggleCommentView()') &nbsp; View {{post.comments.length}} 
+                <ng-pluralize count='post.comments.length' when="{'1': 'Comment', 'other': 'Comments'}">
+                </ng-pluralize> &nbsp; | 
+              span.add(ng-click='toggleCommentForm()') &nbsp; Add Comments
               
             form.form-inline.add-comment(ng-show='commentForm')
               .form-group
@@ -48,9 +48,9 @@ block content
               button.btn.btn-default(type='submit' ng-click='addComment(post, commenter, comment)') Add Comment
             
             .comments(ng-repeat='comment in post.comments' ng-show='comments')
-              p {{post.comments.length}}
-              p {{comment.author}}
-              p {{comment.comment}}
+              hr
+              p.comment {{comment.author}} - 
+                span#content {{comment.comment}}
           
           
           
