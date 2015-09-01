@@ -17,15 +17,15 @@ html(ng-app='redditClone')
             a(href='#' ng-click='toggleForm()') + Submit Post
           li.dropdown
             a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-              | Sort By 
+              | Sort By {{value}}
               span.caret
-            ul.dropdown-menu
+            ul.dropdown-menu(ng-model='dropdown')
               li
-                a(href='#' ng-click='sort = "numVotes"') Votes
+                a(href='#' ng-click='sort="numVotes"; value="Votes"') Votes
               li
-                a(href='#' ng-click='sort = "datePosted"') Date
+                a(href='#' value='Date' ng-click='sort="datePosted"; value="Date"') Date
               li
-                a(href='#' ng-click='sort = "title"') Title
+                a(href='#' value='Title' ng-click='sort="title"; value="Title"') Title
             
         form.navbar-form.navbar-right(role='search')
           .form-group

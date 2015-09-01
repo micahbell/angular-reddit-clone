@@ -76,7 +76,7 @@ app.controller('PostController', function($scope) {
       image: '../images/tobias.jpg',
       description: "Oh, yeah, the $4,000 suit is holding the elevator for a guy who doesn't make that in 3 months. Come on! I'm an ideas man, Michael. I think I proved that with 'Fuck Mountain.' Annhog's coming? No, no, it's pronounced a-nal-ra-pist. It wasn't really the pronunciation that bothered me. Buster's in what we like to call a light to no coma. In layman's terms, it might be considered a very heavy nap.",
       numVotes: -3,
-      datePosted: "2015-01-31T19:27:47.650Z",
+      datePosted: "2015-08-29T19:16:47.650Z",
       comments: []
     },
     {

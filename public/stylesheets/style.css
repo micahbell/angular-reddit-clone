@@ -1,3 +1,7 @@
+body {
+  background-color: darkslategray;
+}
+
 .post {
   border: 1px solid;
 }
