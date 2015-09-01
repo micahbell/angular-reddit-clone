@@ -28,8 +28,8 @@ app.controller('PostController', function($scope) {
     this.commentForm = !this.commentForm;
   };
 
-  $scope.toggleCommentView = function() {
-    $scope.comments = !$scope.comments;
+  $scope.toggleCommentView = function(post) {
+    this.comments = !this.comments;
   };
 
   $scope.addComment = function(post, commenter, comment) {
