@@ -16,24 +16,12 @@ app.controller('PostController', function($scope) {
     $scope.showForm = !$scope.showForm;
   };
 
-  $scope.addPost = function(t, a, i, d) {
-    if(t == undefined || a == undefined || i == undefined || d == undefined) {
-      $scope.invalid = true;
-    } else {
-      $scope.posts.push({
-        title: t,
-        author: a,
-        image: i,
-        description: d,
-        numVotes: 0,
-        datePosted: new Date()
-      });
+  $scope.addPost = function() {
+      $scope.post.numVotes = 0;
+      $scope.post.datePosted = new Date();
+      $scope.posts.push($scope.post);
+      $scope.post = {};
       $scope.toggleForm();
-      $scope.title = '';
-      $scope.author = '';
-      $scope.image = '';
-      $scope.description = '';
-    };
   };
 
   $scope.toggleCommentForm = function() {
