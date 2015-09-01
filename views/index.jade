@@ -20,25 +20,37 @@ block content
           button#add-button(type='submit' ng-click='addPost(title, author, image, description)') Add New Post
           span.invalid(ng-show='invalid') Please fill in all fields.
       
-    .panel.panel-default(ng-repeat='post in posts')
+    .panel.panel-default(ng-repeat='post in posts | orderBy: sort | filter: search')
       .panel-body
         img(src='{{post.image}}')
         .content
           h4 {{post.title}} | 
             span.glyphicon.glyphicon-arrow-up(aria-hidden='true' ng-click='upvote(post)') 
             span.glyphicon.glyphicon-arrow-down(aria-hidden='true' ng-click='downvote(post)')&nbsp;
-            | {{post.numVotes}}
+            span(ng-class='{positive: post.numVotes > 0, negative: post.numVotes < 0}') {{post.numVotes}}
           .author 
             p By: {{post.author}}
           .description
             p {{post.description}}
-            p {{post.dataPosted | date : format : timezone}} | Comments | Add Comments
-          
-          
-          
-          
-          
-          
+            p {{post.datePosted | amCalendar}} | 
+              span {{post.comments.length}} 
+              <ng-pluralize count='post.comments.length' when="{'1': 'Comment', 'other': 'Comments'}">
+              </ng-pluralize> | 
+              span.add(ng-click='toggleCommentForm()') Add Comments
+              
+            form.form-inline.add-comment(ng-show='commentForm')
+              .form-group
+                label(for='commenter' class='comment-label') Author 
+                input(type='text' id='commenter' name='commenter' placeholder='Username' ng-model='commenter')
+              .form-group
+                label.comment-label(for='comment') Comment 
+                input(type='text' id='comment' name='comment' placeholder='Comment Text' ng-model='comment')
+              button.btn.btn-default(type='submit' ng-click='addComment(post, commenter, comment)') Add Comment
+            
+            .comments(ng-repeat='comment in post.comments' ng-show='comments')
+              p {{post.comments.length}}
+              p {{comment.author}}
+              p {{comment.comment}}
           
           
           

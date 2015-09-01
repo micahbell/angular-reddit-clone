@@ -29,9 +29,34 @@ input.form-control#search {
   margin-right: 14px;
 }
 
-span.invalid {
+span.invalid, .negative {
   color: red;
 }
+
+.positive {
+  color: green;
+}
+
+span.add {
+  cursor: pointer;
+}
+
+.add-comment {
+  position: relative;
+  left: 214px;
+  top: 5px;
+  margin-bottom: 5px;
+}
+
+.comment-label {
+  margin-right: 3px;
+  margin-left: 15px;
+}
+
+.form-inline button {
+  margin-left: 15px;
+}
+
 
 
 

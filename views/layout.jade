@@ -21,19 +21,23 @@ html(ng-app='redditClone')
               span.caret
             ul.dropdown-menu
               li
-                a(href='#') Votes
+                a(href='#' ng-click='sort = "numVotes"') Votes
               li
-                a(href='#') Date
+                a(href='#' ng-click='sort = "datePosted"') Date
               li
-                a(href='#') Title
+                a(href='#' ng-click='sort = "title"') Title
             
         form.navbar-form.navbar-right(role='search')
           .form-group
-            input.form-control#search(type='text', placeholder='Search') 
+            input.form-control#search(type='text', placeholder='Search' ng-model='search') 
             button.btn.btn-default(type='submit') Submit
             
     block content
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js")
+    //- load momentJS (required for angular-moment)
+    script(src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js")
+    //- load angular-moment
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
     script(src="../javascripts/app.js")
