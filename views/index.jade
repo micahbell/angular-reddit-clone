@@ -36,7 +36,7 @@ block content
               span.view(ng-click='toggleCommentView()') &nbsp; View {{post.comments.length}} 
                 <ng-pluralize count='post.comments.length' when="{'1': 'Comment', 'other': 'Comments'}">
                 </ng-pluralize> &nbsp; | 
-              span.add(ng-click='toggleCommentForm()') &nbsp; Add Comments
+              span.add(ng-click='toggleCommentForm(post)') &nbsp; Add Comments
               
             form.form-inline.add-comment(ng-show='commentForm')
               .form-group

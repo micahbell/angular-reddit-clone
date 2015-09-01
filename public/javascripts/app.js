@@ -24,8 +24,8 @@ app.controller('PostController', function($scope) {
       $scope.toggleForm();
   };
 
-  $scope.toggleCommentForm = function() {
-    $scope.commentForm = !$scope.commentForm;
+  $scope.toggleCommentForm = function(post) {
+    this.commentForm = !this.commentForm;
   };
 
   $scope.toggleCommentView = function() {
@@ -37,11 +37,9 @@ app.controller('PostController', function($scope) {
       author: commenter,
       comment: comment
     });
-    $scope.toggleCommentForm();
-    // Why won't these reset!?
-    $scope.commenter = '';
-    $scope.comment = '';
-    //////////////////////////
+    this.toggleCommentForm();
+    this.commenter = '';
+    this.comment = '';
   };
 
   $scope.posts = [
