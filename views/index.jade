@@ -5,6 +5,7 @@ block content
     .add-form(ng-show='showForm')
       .panel.panel-default
         .panel-body
+          // Add new post form //
           label(for='title') Title
           input.form-control.add(type='text' id='title' placeholder='Title' ng-model='post.title')
           
@@ -22,6 +23,7 @@ block content
       
     .panel.panel-default(ng-repeat='post in posts | orderBy: sort | filter: search')
       .panel-body
+        // Post content //
         img(src='{{post.image}}')
         .content
           h4 {{post.title}} | 
@@ -36,8 +38,9 @@ block content
               span.view(ng-click='toggleCommentView(post)') &nbsp; View {{post.comments.length}} 
                 <ng-pluralize count='post.comments.length' when="{'1': 'Comment', 'other': 'Comments'}">
                 </ng-pluralize> &nbsp; | 
-              span.add(ng-click='toggleCommentForm(post)') &nbsp; Add Comments
-              
+              span.add(ng-click='toggleCommentForm(post)') &nbsp; Add Comment
+            
+            // Add comments form //
             form.form-inline.add-comment(ng-show='commentForm')
               .form-group
                 label(for='commenter' class='comment-label') Author 
@@ -46,12 +49,12 @@ block content
                 label.comment-label(for='comment') Comment 
                 input(type='text' id='comment' placeholder='Comment Text' ng-model='comment')
               button.btn.btn-default(type='submit' ng-click='addComment(post, commenter, comment)') Add Comment
-            
+              
+            // View all comments //
             .comments(ng-repeat='comment in post.comments' ng-show='comments')
               hr
-              p.comment {{comment.author}} - 
+              p.comment(ng-animate="{enter: 'animate-enter'}") {{comment.author}} - 
                 span#content {{comment.comment}}
-          
           
           
 //
