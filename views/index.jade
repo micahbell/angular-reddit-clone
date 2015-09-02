@@ -2,24 +2,26 @@ extends layout
 
 block content
   .col-md-10.col-md-offset-1
-    .add-form(ng-show='showForm')
+    form.add-form(novalidate name='add_form' ng-show='showForm')
       .panel.panel-default
         .panel-body
           // Add new post form //
+          h4 New Post
+      
           label(for='title') Title
-          input.form-control.add(type='text' id='title' placeholder='Title' ng-model='post.title')
+          input.form-control.add(type='text' id='title' required ng-model='post.title')
           
           label(for='author') Author
-          input.form-control.add(type='text' id='author' placeholder='Author' ng-model='post.author')
+          input.form-control.add(type='text' id='author' required ng-model='post.author')
           
           label(for='image') Image URL
-          input.form-control.add(type='text' id='image' placeholder='Image URL' ng-model='post.image')
+          input.form-control.add(type='text' id='image' required ng-model='post.image')
           
           label(for='description') Description
-          input.form-control.add(type='text' id='description' placeholder='Description' ng-model='post.description')
+          input.form-control.add(type='text' id='description' required ng-model='post.description')
           
-          button#add-button(type='submit' ng-click='addPost()') Add New Post
-          span.invalid(ng-show='invalid') Please fill in all fields.
+          button#add-button(type='submit' ng-disabled='add_form.$invalid' ng-click='addPost()') Add New Post
+          span.invalid(ng-show='add_form.$invalid') Please fill in all fields.
       
     .panel.panel-default(ng-repeat='post in posts | orderBy: sort | filter: search')
       .panel-body

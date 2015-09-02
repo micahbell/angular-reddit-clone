@@ -55,7 +55,7 @@ app.controller('PostController', function($scope) {
     },
     {
       title: 'Operation Hot Mother',
-      author: 'Buster Bluth',
+      author: 'Barry Zuckerkorn',
       image: '../images/gm.jpg',
       description: 'If this tableau I recreate, perhaps I can re-snare my mate. I think the only time you cooked for us was the morning Rosa\'s mom died. You gave us cereal in an ashtray. I think I might have someone who\'s going to circumvrent the law. Say goodbye to THESE! OH MY GOD, WE\'RE HAVING A FIRE… sale. Oh, the burning! My brother wasn\'t optimistic it could be done, but I didn\'t take "wasn\'t optimistic it could be done" for an answer.',
       numVotes: 1,
@@ -73,7 +73,7 @@ app.controller('PostController', function($scope) {
     },
     {
       title: 'There are dozens of us! DOZENS! ',
-      author: 'Barry Zuckerkorn',
+      author: 'Buster Bluth',
       image: '../images/tobias.jpg',
       description: "Oh, yeah, the $4,000 suit is holding the elevator for a guy who doesn't make that in 3 months. Come on! I'm an ideas man, Michael. I think I proved that with 'Fuck Mountain.' Annhog's coming? No, no, it's pronounced a-nal-ra-pist. It wasn't really the pronunciation that bothered me. Buster's in what we like to call a light to no coma. In layman's terms, it might be considered a very heavy nap.",
       numVotes: -3,
@@ -91,7 +91,7 @@ app.controller('PostController', function($scope) {
     },
     {
       title: 'The Bob Loblaw Law Blog',
-      author: 'Ann Veal',
+      author: 'Steve Holt',
       image: '../images/lindsay.jpg',
       description: "Stop licking my hand, you horse's ass! Either I zip down, or he zips up, and that is a mighty long zipper on Mother's Cher jumpsuit. There's a new daddy in town. A discipline daddy. She's a girl, I need to teach her how to be a woman. Within her lies a queen. Let me out that queen. We need a name. Maybe Operation Hot Mother. No, let's try to top that. (They never did.) It's as Ann as the nose on plain's face. I should be in this Poof!",
       numVotes: 4,
