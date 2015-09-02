@@ -54,21 +54,21 @@ app.controller('PostController', function($scope) {
       comments: []
     },
     {
-      title: 'Operation Hot Mother',
-      author: 'Barry Zuckerkorn',
-      image: '../images/gm.jpg',
-      description: 'If this tableau I recreate, perhaps I can re-snare my mate. I think the only time you cooked for us was the morning Rosa\'s mom died. You gave us cereal in an ashtray. I think I might have someone who\'s going to circumvrent the law. Say goodbye to THESE! OH MY GOD, WE\'RE HAVING A FIRE… sale. Oh, the burning! My brother wasn\'t optimistic it could be done, but I didn\'t take "wasn\'t optimistic it could be done" for an answer.',
-      numVotes: 1,
-      datePosted: "2015-08-30T12:08:47.650Z",
-      comments: []
-    },
-    {
       title: 'Dr. Funke\'s 100 Percent Natural Good Time Family Band Solution',
       author: 'Maeby Fünke',
       image: '../images/gob.jpg',
       description: "I made a huge tiny mistake. But anyhoo, can you believe that the only reason the club is going under is because it's in a terrifying neighborhood? What do you think about Sudden Valley? It sounds like a salad dressing, but for some reason I don't want to eat it. I don't care if it takes from now till the end of Shrimpfest. GENE!! So Ann, the question is, do you want a man or a boy? I know how I would answer.",
       numVotes: 2,
       datePosted: "2015-08-27T09:43:47.650Z",
+      comments: []
+    },
+    {
+      title: 'Operation Hot Mother',
+      author: 'Barry Zuckerkorn',
+      image: '../images/gm.jpg',
+      description: 'If this tableau I recreate, perhaps I can re-snare my mate. I think the only time you cooked for us was the morning Rosa\'s mom died. You gave us cereal in an ashtray. I think I might have someone who\'s going to circumvrent the law. Say goodbye to THESE! OH MY GOD, WE\'RE HAVING A FIRE… sale. Oh, the burning! My brother wasn\'t optimistic it could be done, but I didn\'t take "wasn\'t optimistic it could be done" for an answer.',
+      numVotes: 1,
+      datePosted: "2015-08-30T12:08:47.650Z",
       comments: []
     },
     {

@@ -49,7 +49,7 @@ input.form-control#search {
   margin-right: 14px;
 }
 
-span.invalid, .negative {
+.negative {
   color: red;
 }
 

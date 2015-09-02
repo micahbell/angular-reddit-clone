@@ -36,10 +36,17 @@ block content
             p By: {{post.author}}
           .description
             p {{post.description}}
-            p {{post.datePosted | amCalendar}} &nbsp;|
+            p 
+              i.glyphicon.glyphicon-calendar
+              | &nbsp; {{post.datePosted | amCalendar}} &nbsp;| &nbsp;
+              
+              
+              span.glyphicon.glyphicon-comment 
               span.view(ng-click='toggleCommentView(post)') &nbsp; View {{post.comments.length}} 
                 <ng-pluralize count='post.comments.length' when="{'1': 'Comment', 'other': 'Comments'}">
-                </ng-pluralize> &nbsp; | 
+                </ng-pluralize> &nbsp; | &nbsp;
+                
+              span.glyphicon.glyphicon-pencil
               span.add(ng-click='toggleCommentForm(post)') &nbsp; Add Comment
             
             // Add comments form //
